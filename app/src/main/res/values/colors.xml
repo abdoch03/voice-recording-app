@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Couleurs primaires -->
+    <color name="background_primary">#F8FAFC</color>
+    <color name="surface_primary">#FFFFFF</color>
+    <color name="surface_secondary">#F1F5F9</color>
+
+    <!-- Couleurs de texte -->
+    <color name="text_primary">#1E293B</color>
+    <color name="text_secondary">#64748B</color>
+
+    <!-- Couleurs d'accent -->
+    <color name="accent_primary">#3B82F6</color>
+    <color name="accent_secondary">#60A5FA</color>
+
+    <!-- Couleurs d'action -->
+    <color name="error_primary">#EF4444</color>
+    <color name="success_primary">#10B981</color>
+    <color name="warning_primary">#F59E0B</color>
+
+
+    <!-- Couleurs de ripple -->
+    <color name="accent_ripple">#3B82F633</color>
+    <color name="error_ripple">#EF444433</color>
+    <color name="success_ripple">#10B98133</color>
+
+    <!-- Couleurs pour la waveform -->
+    <color name="waveform_bg">#F8FAFC</color>
+    <color name="waveform_active">#3B82F6</color>
+    <color name="waveform_inactive">#CBD5E1</color>
+</resources>
