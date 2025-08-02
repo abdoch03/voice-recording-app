@@ -17,14 +17,43 @@ Elle offre une interface moderne et intuitive, avec une **visualisation en temps
 ---
 
 ## 🏗️ Architecture du projet
-- **Langages :** Java (principal), Kotlin (WaveRecorder)  
-- **Base de données :** SQLite via `VoiceMemoDBHelper`  
+
+- **Langages utilisés :**
+  - Java (logique principale & interface)
+  - Kotlin (librairie `WaveRecorder` pour la capture audio)
+
+- **Base de données :**
+  - SQLite via `VoiceMemoDBHelper` pour stocker les informations sur les mémos (nom, chemin, durée, date)
+
 - **Composants principaux :**
-  - `MainActivity` → Liste + Recherche + Navigation  
-  - `RecordingActivity` → Interface d’enregistrement  
-  - `Dialog Audio Player` → Lecture et visualisation d’onde  
-  - `VoiceMemoAdapter` → Gestion de la liste  
-  - `WaveformView` → Affichage des amplitudes  
+  ### 📱 Activités et vues
+  - `MainActivity.java` → Page d’accueil avec :
+    - Liste des mémos vocaux
+    - Barre de recherche temps réel
+    - Navigation vers l’enregistrement
+    - Lecture d’un mémo via un **dialog personnalisé**
+  - `recording.java` → Page d’enregistrement avec pause/reprise, suppression, validation et visualisation d’onde
+  - `WaveformView.java` → Composant personnalisé pour afficher l’amplitude sonore en temps réel
+
+  ### 📦 Modèles & Gestion des données
+  - `VoiceMemo.java` → Classe modèle représentant un mémo vocal
+  - `VoiceMemoAdapter.java` → Gestion de l’affichage des mémos dans la `ListView`
+  - `VoiceMemoDBHelper.java` → Gestion de la base SQLite (insertion, suppression, mise à jour)
+
+  ### 🎵 Bibliothèque interne pour l’audio (`recorderlib/`)
+  - `WaveRecorder.kt` → Gestion principale de l’enregistrement audio
+  - `Calculate.kt` → Calcul des amplitudes
+  - `FileWriter.kt` & `WaveHeaderWriter.kt` → Écriture des fichiers WAV
+  - `RecorderState.kt` → États de l’enregistreur (en cours, pause, stop)
+  - `WaveConfig.kt` → Configuration de l’enregistrement audio
+  - `SilenceDetectionConfig.kt` → Gestion optionnelle de la détection de silence
+
+---
+
+Cette organisation rend l’application **modulaire**, avec une séparation claire entre :  
+- **UI & navigation** (Activities & WaveformView)  
+- **Gestion des données** (Model + Adapter + DBHelper)  
+- **Enregistrement audio** (recorderlib Kotlin)
 
 ---
 
